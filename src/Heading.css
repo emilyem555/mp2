@@ -1,0 +1,49 @@
+.nav {
+  height:10vh;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left:3vw;
+  margin-right:3vw;
+}
+
+h1 {
+  font-size:24px;
+}
+
+.toggles {
+  display: flex;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+button {
+  height:6vh;
+  width:10vw;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+  font-weight: 600;
+  
+}
+
+.galleryButton {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  &:hover {
+    background-color: var(--accent);
+    color: var(--accent-bg);
+  }
+}
+
+.listbutton {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  &:hover {
+    background-color: var(--accent);
+    color: var(--accent-bg);
+  }
+}

@@ -1,0 +1,13 @@
+.card {
+  height:90vh;
+  width:90vw;
+  background-color: var(--card);
+  margin-top: 3vh;
+  border-radius: 10px;
+  
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+}
