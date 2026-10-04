@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react'
-import {FaSearch} from "react-icons/fa";
 import axios from 'axios'
 import './card.css'
-import ListItem from './listItem';
 import Heading from './Heading';
 
 

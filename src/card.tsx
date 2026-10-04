@@ -47,7 +47,7 @@ function ListCard() {
 
   function handleChange(str:string) {
     setSearch(str);
-    updateAPI({search:inputText,sort:sort});
+    updateAPI({search:inputText});
   }
 
   function handleSortChange(val:number) {
@@ -70,7 +70,7 @@ function ListCard() {
     }
   }
 
-  function updateAPI({search, sort}: { search: string, sort:number}) {
+  function updateAPI({search}: { search: string}) {
     var query;
     if (search.length > 0) {
       query =  "https://api.artic.edu/api/v1/artworks/search?q=" + search + "&fields=id,title,image_id,artist_display&limit=100";

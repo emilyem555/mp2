@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route, Link, useNavigate, useLocation} from 'react-router-dom';
+// import { useState } from 'react'
+import { useNavigate, useLocation} from 'react-router-dom';
 import {FaImages, FaBars} from "react-icons/fa";
 import './Heading.css';
 
 function Heading() {
-  const [pg, setPg] = useState(0);
+  // const [pg, setPg] = useState(0);
   const navigate = useNavigate();
   const location = useLocation();
   return (
@@ -14,7 +14,7 @@ function Heading() {
       <div className="toggles">
         <button
           onClick={() => {
-            setPg(1);
+            // setPg(1);
             navigate("/gallery", { replace: true });
           }}
           className={
@@ -28,7 +28,7 @@ function Heading() {
 
         <button
           onClick={() => {
-            setPg(0);
+            // setPg(0);
             navigate("/list", { replace: true });
           }}
           className={

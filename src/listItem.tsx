@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react'
-import {useNavigate, useLocation} from 'react-router-dom';
-import axios from 'axios'
+import {useNavigate} from 'react-router-dom';
 import './card.css'
 
 function ListItem({ title, artist="Not Listed", image,id }: { title: string,artist:string, image: string, id: number }) {
