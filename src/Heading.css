@@ -9,17 +9,18 @@
 }
 
 h1 {
-  font-size:24px;
+  font-size:30px;
+  color: var(--text-h);
 }
 
 .toggles {
   display: flex;
   align-items: center;
-  margin-top: 5vh;
+  margin-top: 3vh;
 }
 
 button {
-  height:6vh;
+  height:5vh;
   width:10vw;
   color: var(--accent);
   background: var(--accent-bg);
@@ -27,15 +28,21 @@ button {
   transition: border-color 0.3s;
   margin-bottom: 24px;
   font-weight: 600;
-  
+  font-size: 16px;
 }
 
 .galleryButton {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   &:hover {
-    background-color: var(--accent);
-    color: var(--accent-bg);
+    background-color: var(--accent-hover);
+    /* color: var(--accent-bg); */
+    cursor: pointer;
+  }
+  &.active {
+    background-color: var(--accent-active);
+    /* color: var(--accent-bg); */
+    cursor: pointer;
   }
 }
 
@@ -43,7 +50,13 @@ button {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   &:hover {
-    background-color: var(--accent);
-    color: var(--accent-bg);
+    background-color: var(--accent-hover);
+    cursor: pointer;
+    /* color: var(--accent-hover-txt); */
+  }
+  &.active {
+    background-color: var(--accent-active);
+    /* color: var(--accent-bg); */
+    cursor: pointer;
   }
 }

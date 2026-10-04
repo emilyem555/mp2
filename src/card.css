@@ -1,13 +1,138 @@
 .card {
-  height:90vh;
-  width:90vw;
-  background-color: var(--card);
+  height:80vh;
+  width:80vw;
+  background-color: var(--bg);
   margin-top: 3vh;
   border-radius: 10px;
-  
+}
+
+
+
+.card-body {
+  height:72vh;
+  overflow-y: auto;
+  color:var(--card-header);
+}
+
+#grid {
+  background-color: rgb(66,66,69);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  column-gap:2vw;
+  grid-template-columns: auto auto auto;
+  img {
+    height:40vh;
+    max-width:40vh;
+  }
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0px 3px 10px rgb(9, 11, 17);
+  height:8vh;
+  width:100%;
+  background-color: var(--card-header);
 }
 
 .card-container {
   display: flex;
   justify-content: center;
+}
+
+#title-artist {
+  margin-left:3vw;
+  color:black;
+  padding-top: 2vh;
+}
+
+.itemGroup {
+  color:black;
+  background-color: white;
+  border:5px solid var(--bg);
+  display:flex;
+  justify-content: start;
+  align-items:start;
+  padding:1vh;
+  border-radius: 5px;
+}
+img {
+  /* width:20vw; */
+  padding:0.5rem;
+  height:28vh;
+  max-width: 20vw;
+  object-fit:cover;
+  object-position:50% 30%;
+}
+.sort-group {
+  margin-left:2vw;
+}
+
+.search-group {
+  background-color: white;
+  padding:2px;
+  padding-left:5px;
+  height:4vh;
+  border-radius:8px;
+  display: flex;
+  align-items: center;
+  margin-right:2vw;
+  &.search-icon {
+    margin:10px;
+  }
+}
+
+.sort {
+  margin-left:0.75vw;
+  width:12vw;
+  height:4vh;
+  border-radius: 6px;;
+  background-color: white;
+  color:var(--text);
+  font-size: 14px;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+  &option {
+  background-color: white;
+  color:var(--text);
+  font-size: 14px;
+  outline:none;
+  border:none;
+}
+}
+
+
+
+.search {
+  margin-left:5px;
+  width: 15vw;
+  border-radius: 5px;
+  height:3vh;
+  border:none;
+  background-color: white;
+  color:var(--text);
+  font-size: 14px;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+h2{
+  font-size: 24px;
+  /* margin-bottom: 12vh; */
+  text-align: left;
+}
+
+h3 {
+  font-size:20px;
+  text-align:left;
 }

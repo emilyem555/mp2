@@ -1,16 +1,20 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+// import { useState } from 'react'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css'
-import Heading from './Heading.tsx'
-import Card from './card.tsx'
+// import Heading from './Heading.tsx'
+import ListCard from './card.tsx'
+import GridCard from './gridCard.tsx';
 
 function App() {
   return (
     <>
-      <Heading/ >
-      <Card />
+    <BrowserRouter>
+      {/* <Card /> */}
+      <Routes>
+        <Route path="/list" element={<ListCard />} />
+        <Route path="/gallery" element={<GridCard />}/>
+      </Routes>
+    </BrowserRouter>
     </>
   )
 }
