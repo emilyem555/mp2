@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 
 // next steps: make order navigation/next prev stuff.
-function Details(pieces:Artwork[]) {
+function Details() {
   const {id} = useParams();
   interface Artwork {
       id: number;

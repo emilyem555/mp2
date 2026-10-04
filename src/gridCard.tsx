@@ -12,7 +12,11 @@ function GridCard() {
       id: number;
       title: string;
       image_id: string | null;
+      date_start:number;
+      date_end:number;
+      date_display:string;
       artist_display:string;
+      short_description:string;
   }
 
   interface ArtworkResponse {
