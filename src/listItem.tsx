@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
+import {useNavigate, useLocation} from 'react-router-dom';
 import axios from 'axios'
 import './card.css'
 
-function ListItem({ title, artist="Not Listed", image }: { title: string,artist:string, image: string }) {
+function ListItem({ title, artist="Not Listed", image,id }: { title: string,artist:string, image: string, id: number }) {
+  let navigate = useNavigate();
   return (
-    <div id={title} className="itemGroup">
+    <div onClick={()=>navigate(`/details/${id}`, { replace: true })} id={title} className="itemGroup">
       <img className="listImg" src={image} referrerPolicy="no-referrer" />
       <div id="title-artist">
         <h2>{title}</h2>

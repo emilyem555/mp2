@@ -4,6 +4,7 @@ import './App.css'
 // import Heading from './Heading.tsx'
 import ListCard from './card.tsx'
 import GridCard from './gridCard.tsx';
+import Details from './details.tsx';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/list" element={<ListCard />} />
         <Route path="/gallery" element={<GridCard />}/>
+        <Route path="/details/:id" element={<Details />}/>
       </Routes>
     </BrowserRouter>
     </>

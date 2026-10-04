@@ -6,7 +6,7 @@ import ListItem from './listItem';
 import Heading from './Heading';
 
 
-// next steps: images working, make search/sort functional
+// next steps: filter
 function GridCard() {
   interface Artwork {
       id: number;
@@ -27,7 +27,7 @@ function GridCard() {
 
   useEffect(() => {
       axios.get<ArtworkResponse>(
-          "https://api.artic.edu/api/v1/artworks"
+          "https://api.artic.edu/api/v1/artworks?limit=70"
       )
       .then(response => {
           setData(response.data.data);
@@ -42,12 +42,12 @@ function GridCard() {
   console.log(data.length);
   // if (data.length >= 10) {
     for (let i = 0; i < data.length; i++) {
-      // if(isValidImage("https://www.artic.edu/iiif/2/"+data[i].image_id+"/full/843,/0/default.png")) {
-      var img = document.createElement("img");
-      img.src="https://www.artic.edu/iiif/2/"+data[i].image_id+"/full/843,/0/default.png";
-      i
         gridItems.push(
-                <img src={"https://www.artic.edu/iiif/2/"+data[i].image_id+"/full/843,/0/default.png"}/>
+                <img src={
+                    data[i].image_id
+                        ? iiifUrl + "/" + data[i].image_id + "/full/843,/0/default.jpg"
+                        : ""
+                }/>
         );
       // }
     // }
