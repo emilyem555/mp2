@@ -9,7 +9,7 @@ import Details from './details.tsx';
 function App() {
   return (
     <>
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       {/* <Card /> */}
       <Routes>
         <Route path="/list" element={<ListCard />} />
