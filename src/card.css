@@ -43,7 +43,7 @@
   align-items: center;
   img {
     height:50vh;
-    padding:1rem;
+    margin:1rem;
   }
   h2,h3,h4,h5,p {
     color:black;
@@ -57,16 +57,62 @@
 #left {
   font-size: 48px;
   color: var(--text);
+  cursor: pointer;
 }
 
 #right {
   font-size: 48px;
   color: var(--text);
+  cursor: pointer;
 }
 
 #details-close {
   font-size:36px;
   color:black;
+}
+
+.filterButton {
+  width:auto;
+  height:4vh;
+  border-radius: 20px;
+  font-size: 12px;
+  padding-left:0.45rem;
+  padding-right: 0.45rem;
+  padding-top:0.2rem;
+  padding-bottom:0.25rem;
+  margin-bottom:0.25rem;
+  margin-right:1.5rem;
+  margin-left:1.5rem;
+  margin-top:0.1rem;
+  box-shadow: 1px 1px 5px rgb(175, 192, 220);
+  cursor: pointer;
+  &:hover {
+    height:4.5vh;
+    background-color: rgba(23, 44, 85, 0.949);
+    margin-bottom:0.1rem;
+    margin-top:0.05rem;
+  }
+}
+
+#pd, #onDis {
+    background-color: rgba(72, 36, 103, 0.949);
+    color: rgba(193, 164, 218, 0.949);
+  box-shadow: 1px 1px 5px rgb(199, 175, 220);
+  &:hover {
+    background-color: rgba(59, 23, 85, 0.949);
+  }
+
+}
+
+#grid-heading {
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height:10vh;
+  width:80vw;
+  padding-top:0.5rem;
+  padding-bottom:0.5rem;
+  /* padding:1rem; */
 }
 
 #grid {
@@ -76,7 +122,6 @@
   display:flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  /* align-items: center; */
   overflow-x: hidden;
   img {
     height:40vh;
@@ -127,7 +172,8 @@
 }
 img {
   /* width:20vw; */
-  padding:0.5rem;
+  box-shadow: 2px 2px 10px rgb(7, 18, 35);
+  margin:0.5rem;
   height:28vh;
   max-width: 20vw;
   object-fit:cover;

@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react'
 import {FaSearch} from "react-icons/fa";
-import axios from 'axios'
-import './card.css'
-import ListItem from './listItem';
+import axios from 'axios';
+import './card.css';
+import { useNavigate } from 'react-router-dom';
 import Heading from './Heading';
 
-function ListCard() {
-  interface Artwork {
+interface Artwork {
       id: number;
       title: string;
       image_id: string | null;
@@ -24,6 +23,8 @@ function ListCard() {
       };
   }
 
+function ListCard({d}:{d:Artwork[]}) {
+  var navigate = useNavigate();
   const [data, setData] = useState<Artwork[]>([]);
   const [sortedData, setSortedData] = useState<Artwork[]>([]);
   const [iiifUrl, setIiifUrl] = useState("");
@@ -32,12 +33,16 @@ function ListCard() {
 
   useEffect(() => {
         axios.get<ArtworkResponse>(
-            "https://api.artic.edu/api/v1/artworks?limit=50"
+            "https://api.artic.edu/api/v1/artworks?limit=70"
         )
         .then(response => {
-            let val = response.data.data;
-            setData(val);
-            setSortedData(val);
+            if(d && d.length > 0) {
+              setData(d);
+              setSortedData(d);
+            } else {
+              setData(response.data.data);
+              setSortedData(response.data.data);
+            }
             setIiifUrl(response.data.config.iiif_url);
         })
         .catch(error => {
@@ -70,6 +75,7 @@ function ListCard() {
     }
   }
 
+  //fix querying
   function updateAPI({search}: { search: string}) {
     var query;
     if (search.length > 0) {
@@ -91,20 +97,31 @@ function ListCard() {
       });
   }
 
-  let listItems = []
+  let listItems: React.JSX.Element[] = []
   // if (sortedData.length >= 10) {
     for (let i = 0; i < sortedData.length; i++) {
         listItems.push(
-            <ListItem
-                title={sortedData[i].title}
-                image={
+          <div onError={()=> listItems = listItems.filter(item => i == listItems.indexOf(item) )} onClick={()=>navigate(`/details/${data[i].id}`, { replace: true,state:{d:sortedData} })} id={sortedData[i].title} className="itemGroup">
+            <img className="listImg" src={
                     sortedData[i].image_id
                         ? iiifUrl + "/" + sortedData[i].image_id + "/full/843,/0/default.jpg"
                         : ""
-                }
-                artist={sortedData[i].artist_display}
-                id={sortedData[i].id}
-            />
+                } referrerPolicy="no-referrer" />
+            <div id="title-artist">
+              <h2>{sortedData[i].title}</h2>
+              <h3>{sortedData[i].artist_display}</h3>
+            </div>
+          </div>
+            // <ListItem
+            //     title={sortedData[i].title}
+            //     image={
+            //         sortedData[i].image_id
+            //             ? iiifUrl + "/" + sortedData[i].image_id + "/full/843,/0/default.jpg"
+            //             : ""
+            //     }
+            //     artist={sortedData[i].artist_display}
+            //     id={sortedData[i].id}
+            // />
         );
     }
   // } 
