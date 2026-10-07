@@ -7,16 +7,20 @@ import ListCard from './card.tsx'
 import GridCard from './gridCard.tsx';
 import Details from './details.tsx';
 
+
 interface Artwork {
-        id: number;
-        title: string;
-        image_id: string | null;
-        date_start:number;
-        date_end:number;
-        date_display:string;
-        artist_display:string;
-        short_description:string;
-    }
+      id: number;
+      title: string;
+      image_id: string | null;
+      date_start:number;
+      date_end:number;
+      date_display:string;
+      artist_display:string;
+      short_description:string;
+      is_public_domain:boolean;
+      is_on_view:boolean;
+      category_titles:Array<string>;
+  }
   
     interface ArtworkResponse {
         data: Artwork[];
@@ -32,7 +36,7 @@ function App() {
   // let navigate = useNavigate();
     useEffect(() => {
         axios.get<ArtworkResponse>(
-            "https://api.artic.edu/api/v1/artworks?limit=70"
+            "https://api.artic.edu/api/v1/artworks?limit=100"
         )
         .then(response => {
             setData(response.data.data);

@@ -9,13 +9,19 @@ import { useParams } from 'react-router-dom';
 
 // next steps: make order navigation/next prev stuff.
 function Details() {
-  interface Artwork {
+
+interface Artwork {
       id: number;
       title: string;
       image_id: string | null;
+      date_start:number;
+      date_end:number;
       date_display:string;
       artist_display:string;
       short_description:string;
+      is_public_domain:boolean;
+      is_on_view:boolean;
+      category_titles:Array<string>;
   }
   interface ArtworkResponse {
       data: Artwork;

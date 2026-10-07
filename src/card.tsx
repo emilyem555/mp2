@@ -5,6 +5,7 @@ import './card.css';
 import { useNavigate } from 'react-router-dom';
 import Heading from './Heading';
 
+
 interface Artwork {
       id: number;
       title: string;
@@ -14,6 +15,9 @@ interface Artwork {
       date_display:string;
       artist_display:string;
       short_description:string;
+      is_public_domain:boolean;
+      is_on_view:boolean;
+      category_titles:Array<string>;
   }
 
   interface ArtworkResponse {

@@ -81,8 +81,8 @@
   padding-top:0.2rem;
   padding-bottom:0.25rem;
   margin-bottom:0.25rem;
-  margin-right:1.5rem;
-  margin-left:1.5rem;
+  margin-right:0.5rem;
+  margin-left:0.5rem;
   margin-top:0.1rem;
   box-shadow: 1px 1px 5px rgb(175, 192, 220);
   cursor: pointer;
@@ -94,7 +94,7 @@
   }
 }
 
-#pd, #onDis {
+.active {
     background-color: rgba(72, 36, 103, 0.949);
     color: rgba(193, 164, 218, 0.949);
   box-shadow: 1px 1px 5px rgb(199, 175, 220);
@@ -108,7 +108,7 @@
   display:flex;
   justify-content: center;
   flex-wrap: wrap;
-  height:10vh;
+  height:20vh;
   width:80vw;
   padding-top:0.5rem;
   padding-bottom:0.5rem;
@@ -127,7 +127,11 @@
     height:40vh;
     max-width:40vh;
   }
+  img:hover {
+    cursor: pointer;
+  }
 }
+
 
 .card-header {
   display: flex;
@@ -161,6 +165,7 @@
 }
 
 .itemGroup {
+  cursor: pointer;
   color:black;
   background-color: rgb(185, 185, 185);
   border:5px solid var(--bg);
