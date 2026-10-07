@@ -94,7 +94,7 @@
   }
 }
 
-.active {
+.filterButton.active {
     background-color: rgba(72, 36, 103, 0.949);
     color: rgba(193, 164, 218, 0.949);
   box-shadow: 1px 1px 5px rgb(199, 175, 220);
