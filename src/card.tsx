@@ -32,7 +32,7 @@ function ListCard({d}:{d:Artwork[]}) {
   const [data, setData] = useState<Artwork[]>([]);
   const [sortedData, setSortedData] = useState<Artwork[]>([]);
   const [iiifUrl, setIiifUrl] = useState("");
-  const [inputText, setSearch] = useState("");
+  // const [inputText, setSearch] = useState("");
   const [sort, setSort] = useState(0); // 0 - none, 1 - a-z, 2 - z-a, 3 - newest, 4 - oldest
 
   useEffect(() => {
@@ -55,7 +55,7 @@ function ListCard({d}:{d:Artwork[]}) {
     }, []);
 
   function handleChange(str:string) {
-    setSearch(str);
+    // setSearch(str);
     updateAPI({search:str});
   }
 
