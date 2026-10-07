@@ -42,7 +42,7 @@ function GridCard({d}:{d:Artwork[]}) {
   const [ogData, setOgData] = useState<Artwork[]>([]);
   const [data, setData] = useState<Artwork[]>([]);
   const [iiifUrl, setIiifUrl] = useState("");
-  let filters = new Set<string>();
+  const [filters] = useState(new Set<string>());
   const [categories, setCategories] = useState<category[]>([]);
   useEffect(() => {
         axios.get<ArtworkResponse>(
