@@ -20,10 +20,16 @@ h1 {
 }
 
 button {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+button.galleryButton, button.listbutton {
   height:5vh;
   width:10vw;
   color: var(--accent);
-  background: var(--accent-bg);
+  background: var(--accent-active);
   border: 2px solid transparent;
   transition: border-color 0.3s;
   margin-bottom: 24px;
@@ -40,9 +46,9 @@ button {
     cursor: pointer;
   }
   &.active {
-    background-color: var(--accent-active);
+    background-color: var(--accent-bg);
     /* color: var(--accent-bg); */
-    cursor: pointer;
+    cursor: auto;
   }
 }
 
@@ -55,8 +61,8 @@ button {
     /* color: var(--accent-hover-txt); */
   }
   &.active {
-    background-color: var(--accent-active);
+    background-color: var(--accent-bg);
     /* color: var(--accent-bg); */
-    cursor: pointer;
+    cursor: auto;
   }
 }

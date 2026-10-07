@@ -74,6 +74,8 @@
 .filterButton {
   width:auto;
   height:4vh;
+  background-color: rgba(43, 67, 112, 0.949);
+  border:none;
   border-radius: 20px;
   font-size: 12px;
   padding-left:0.45rem;
