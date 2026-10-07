@@ -56,28 +56,37 @@ function ListCard({d}:{d:Artwork[]}) {
 
   function handleChange(str:string) {
     setSearch(str);
-    updateAPI({search:inputText});
+    updateAPI({search:str});
   }
 
   function handleSortChange(val:number) {
     setSort(val);
-    sortData(val);
+    sortData(data, val);
   }
 
-  function sortData(sortVal:number = sort) {
-    const temp = data;
-    if(sortVal == 2) {
-      setSortedData(temp.toSorted((a,b) => a.title > b.title? -1:1));
+  function sortData(dataToSort: Artwork[], sortVal: number = sort) {
+    if (sortVal == 2) {
+        setSortedData(
+            dataToSort.toSorted((a, b) => a.title > b.title ? -1 : 1)
+        );
     } else if (sortVal == 1) {
-      setSortedData(temp.toSorted((a,b) => a.title > b.title? 1: -1));
+        setSortedData(
+            dataToSort.toSorted((a, b) => a.title > b.title ? 1 : -1)
+        );
     } else if (sortVal == 3) {
-      setSortedData(temp.toSorted((a,b) => a.date_end > b.date_end? -1:1));
+        setSortedData(
+            dataToSort.toSorted((a, b) => a.date_end > b.date_end ? -1 : 1)
+        );
     } else if (sortVal == 4) {
-      setSortedData(temp.toSorted((a,b) => a.date_end > b.date_end? 1:-1));
+        setSortedData(
+            dataToSort.toSorted((a, b) => a.date_end > b.date_end ? 1 : -1)
+        );
     } else {
-      setSortedData(temp.toSorted((a,b) => a.id > b.id? 1: -1));
+        setSortedData(
+            dataToSort.toSorted((a, b) => a.id > b.id ? 1 : -1)
+        );
     }
-  }
+}
 
   //fix querying
   function updateAPI({search}: { search: string}) {
@@ -93,7 +102,7 @@ function ListCard({d}:{d:Artwork[]}) {
       .then(response => {
           let arr = response.data.data;
           setData(arr);
-          sortData();
+          sortData(arr);
           setIiifUrl(response.data.config.iiif_url);
       })
       .catch(error => {
